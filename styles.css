@@ -1,0 +1,73 @@
+/* Original coordinate system: 3508 × 2480. No scripts or generated image assets. */
+:root { color-scheme: dark; --drop-duration: 1.6s; }
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: #000; }
+body { min-height: 100svh; display: grid; place-items: center; }
+.artwork {
+  position: relative;
+  width: min(100vw, calc(100svh * 3508 / 2480));
+  aspect-ratio: 3508 / 2480;
+  isolation: isolate;
+}
+.base { display: block; width: 100%; height: 100%; user-select: none; }
+.layer {
+  position: absolute; inset: 0; pointer-events: none;
+  background: #000 url("asset4pro1/1.PNG") center / 100% 100% no-repeat;
+}
+/* Clipping boundaries fall in unchanged gaps between the five motion envelopes.
+   Every layer retains full-frame sizing, so resizing cannot shift its registration.
+   Source-pixel boundaries: 0 | 380 | 940 | 1700 | 2720 | 3508. */
+.layer-a { clip-path: inset(0 89.167616876% 0 0.000000000%); }
+.layer-b { clip-path: inset(0 73.204104903% 0 10.832383124%); }
+.layer-c { clip-path: inset(0 51.539338655% 0 26.795895097%); }
+.layer-d { clip-path: inset(0 22.462941847% 0 48.460661345%); }
+.layer-e { clip-path: inset(0 0.000000000% 0 77.537058153%); }
+/* Invisible elliptical hit areas, aligned to the reference guides.
+   The outline appears only for keyboard focus, never as a blue guide circle. */
+.hit {
+  appearance: none; -webkit-appearance: none;
+  position: absolute; z-index: 2; margin: 0; padding: 0;
+  border: 0; border-radius: 50%; background: transparent;
+  cursor: pointer; touch-action: manipulation;
+  transform: translate(-50%, -50%);
+}
+.hit:focus-visible { outline: 2px dashed #fff; outline-offset: 3px; }
+.hit:checked { visibility: hidden; pointer-events: none; }
+.hit-a { left: 4.766949%; top: 52.923538%; width: 7.733051%; height: 4.347826%; }
+.hit-b { left: 19.385593%; top: 42.578711%; width: 4.237288%; height: 5.847076%; }
+.hit-c { left: 36.599576%; top: 43.853073%; width: 4.237288%; height: 5.697151%; }
+.hit-d { left: 61.334746%; top: 49.250375%; width: 7.627119%; height: 7.196402%; }
+.hit-e { left: 83.686441%; top: 45.052474%; width: 4.661017%; height: 6.146927%; }
+#string-a:checked ~ .layer-a { animation: drop var(--drop-duration) steps(1, end) forwards; }
+#string-b:checked ~ .layer-b { animation: drop var(--drop-duration) steps(1, end) forwards; }
+#string-c:checked ~ .layer-c { animation: drop var(--drop-duration) steps(1, end) forwards; }
+#string-d:checked ~ .layer-d { animation: drop var(--drop-duration) steps(1, end) forwards; }
+#string-e:checked ~ .layer-e { animation: drop var(--drop-duration) steps(1, end) forwards; }
+/* Discrete frame changes: no crossfade and no global image swap. */
+@keyframes drop {
+  0% { background-image: url("asset4pro1/1.PNG"); }
+  6.25% { background-image: url("asset4pro1/2.PNG"); }
+  12.5% { background-image: url("asset4pro1/3.PNG"); }
+  18.75% { background-image: url("asset4pro1/4.PNG"); }
+  25% { background-image: url("asset4pro1/5.PNG"); }
+  31.25% { background-image: url("asset4pro1/6.PNG"); }
+  37.5% { background-image: url("asset4pro1/7.PNG"); }
+  43.75% { background-image: url("asset4pro1/8.PNG"); }
+  50% { background-image: url("asset4pro1/9.PNG"); }
+  56.25% { background-image: url("asset4pro1/10.PNG"); }
+  62.5% { background-image: url("asset4pro1/11.PNG"); }
+  68.75% { background-image: url("asset4pro1/12.PNG"); }
+  75% { background-image: url("asset4pro1/13.PNG"); }
+  81.25% { background-image: url("asset4pro1/14.PNG"); }
+  87.5% { background-image: url("asset4pro1/15.PNG"); }
+  93.75% { background-image: url("asset4pro1/16.PNG"); }
+  100% { background-image: url("asset4pro1/17.PNG"); }
+}
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.completed { display: none; }
+/* Completion is the conjunction of all five independent states. Each control
+   already locks when checked; all five clipped final frames reproduce frame 17. */
+.artwork:has(#string-a:checked):has(#string-b:checked):has(#string-c:checked):has(#string-d:checked):has(#string-e:checked) .completed { display: block; }
+@media (prefers-reduced-motion: reduce) {
+  :root { --drop-duration: 1ms; }
+}

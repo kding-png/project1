@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empathetic — Five Strings</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="asset4pro1/1.PNG">
+  <link rel="preload" as="image" href="asset4pro1/2.PNG">
+  <link rel="preload" as="image" href="asset4pro1/3.PNG">
+  <link rel="preload" as="image" href="asset4pro1/4.PNG">
+  <link rel="preload" as="image" href="asset4pro1/5.PNG">
+  <link rel="preload" as="image" href="asset4pro1/6.PNG">
+  <link rel="preload" as="image" href="asset4pro1/7.PNG">
+  <link rel="preload" as="image" href="asset4pro1/8.PNG">
+  <link rel="preload" as="image" href="asset4pro1/9.PNG">
+  <link rel="preload" as="image" href="asset4pro1/10.PNG">
+  <link rel="preload" as="image" href="asset4pro1/11.PNG">
+  <link rel="preload" as="image" href="asset4pro1/12.PNG">
+  <link rel="preload" as="image" href="asset4pro1/13.PNG">
+  <link rel="preload" as="image" href="asset4pro1/14.PNG">
+  <link rel="preload" as="image" href="asset4pro1/15.PNG">
+  <link rel="preload" as="image" href="asset4pro1/16.PNG">
+  <link rel="preload" as="image" href="asset4pro1/17.PNG">
+</head>
+<body>
+  <main class="artwork" aria-label="Empathetic: interactive string artwork" aria-describedby="instructions">
+    <p id="instructions" class="sr-only">Click the five string knots, or use Tab and Space, to let each string drop. Each string drops once. Reload to begin again.</p>
+    <!-- Separate radio groups are deliberate: each is an independent, one-way latch. -->
+    <input class="hit hit-a" id="string-a" type="radio" name="string-a" aria-label="Drop string A: far left loose end">
+    <input class="hit hit-b" id="string-b" type="radio" name="string-b" aria-label="Drop string B: left knot above the m">
+    <input class="hit hit-c" id="string-c" type="radio" name="string-c" aria-label="Drop string C: middle knot above the p">
+    <input class="hit hit-d" id="string-d" type="radio" name="string-d" aria-label="Drop string D: right-middle knot over the e">
+    <input class="hit hit-e" id="string-e" type="radio" name="string-e" aria-label="Drop string E: right knot over the final c">
+    <img class="base" src="asset4pro1/1.PNG" width="3508" height="2480" alt="The word empathetic in textured red letters, threaded with five loose red strings." draggable="false">
+    <div class="layer layer-a" aria-hidden="true"></div>
+    <div class="layer layer-b" aria-hidden="true"></div>
+    <div class="layer layer-c" aria-hidden="true"></div>
+    <div class="layer layer-d" aria-hidden="true"></div>
+    <div class="layer layer-e" aria-hidden="true"></div>
+    <p class="completed sr-only" role="status">All five strings have dropped.</p>
+  </main>
+</body>
+</html>
